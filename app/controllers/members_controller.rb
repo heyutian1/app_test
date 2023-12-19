@@ -4,6 +4,7 @@ class MembersController < ApplicationController
   # GET /members or /members.json
   def index
     @members = current_school.members
+    @members = @members.where(kype: params[:kype]) if params[:kype].present? 
   end
 
   def follow
