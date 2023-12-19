@@ -1,0 +1,18 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  school: one
+  name: Jacques Collier
+  kype: 1
+  password: 12345678
+  confirm_password: 12345678
+  token: uruecqjMcpDVFnN3Wq2jdjFp
+
+two:
+  school: one
+  name: Kum Leuschke DVM
+  kype: 1
+  password: 12345678
+  confirm_password: 12345678
+  token: WujGm5qnXRkaYwadGWsDrMNt
+

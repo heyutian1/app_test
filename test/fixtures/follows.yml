@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  member: one
+  followable_id: members(:two).id
+  followable_type: Member
+
+two:
+  member: two
+  followable_id:  members(:one).id
+  followable_type: Member
