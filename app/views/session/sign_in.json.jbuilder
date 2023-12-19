@@ -1,5 +1,6 @@
 json.member do
   json.partial! "/members/member", member: @member
+  json.token @member.token
 end
 
 json.school do

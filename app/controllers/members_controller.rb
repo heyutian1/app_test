@@ -9,16 +9,18 @@ class MembersController < ApplicationController
 
   def follow
     return render json: {msg: '请选择你要关注的人'}, status: 403 unless params[:member_id]
-    current_member.follows.create!(followable_type: 'Member', followable_id: params[:member_id])
+    current_member.follows.where(followable_type: 'Member', followable_id: params[:member_id]).first_or_create
+    render json: {msg: "成功关注"}, status: 200
   end
 
   def unfollow
     return render json: {msg: '请选择你要取消关注的人'}, status: 403 unless params[:member_id]
     current_member.follows.where(followable_type: 'Member', followable_id: params[:member_id]).destroy_all
+    render json: {msg: '取消关注'}, status: 200
   end
 
   def followers
-    @followers = @member.followers
+    @follows = @member.follows
   end
 
   private
